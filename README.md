@@ -18,7 +18,7 @@ Terminal Apps should be specified in the config file using the following format:
 
 `{app-name} -name {app-name}`
 
-for example, if we wanted to run **htop** as a terminal app using dmenu, we would add this line to `$XDG_CONFIG_HOME/dmenu/terminal-apps.config`:
+for example, if we wanted to run **htop** as a terminal app using dmenu, we would add this line to the config file:
 
 `htop -name htop`
 
