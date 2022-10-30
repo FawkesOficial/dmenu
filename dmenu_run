@@ -1,2 +1,14 @@
 #!/bin/sh
-dmenu_path | dmenu "$@" | ${SHELL:-"/bin/sh"} &
+#
+# Run terminal apps in terminal
+# Based on: https://bbs.archlinux.org/viewtopic.php?pid=1088164#p1088164
+# Added: xresource_name option for running apps with urxvtc
+# in your "terminal-apps.config" file use this format if you want to pass xresource_name:
+# ranger -name ranger
+# 
+TERMINAL=${TERMINAL:-"st"}
+term_apps_config="${XDG_CONFIG_HOME:-$HOME/.config}/dmenu/terminal-apps.config"
+
+APP=$(dmenu_path | dmenu "$@")
+
+( [ -f $term_apps_config ] && ( grep -q -w "$APP" "$term_apps_config" && xresource_name=$(awk '/'"$APP"'/{print $2" "$3}' "$term_apps_config") && "$TERMINAL" "$xresource_name" -e "$APP" ) ) || echo "$APP" | ${SHELL:-"/bin/sh"} &

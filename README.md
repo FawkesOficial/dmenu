@@ -13,7 +13,7 @@
 
 ## Terminal Apps
 
-First, change the `$TERMINAL` variable in `dmenu_run` to your terminal (ex. $TERMINAL="**st**").
+First, change the `$TERMINAL` variable in `dmenu_run` to your terminal (ex. `TERMINAL=${TERMINAL:-"st"}`, this makes sure that if you already set $TERMINAL, this won't change it).
 
 Terminal Apps should be specified in the config file using the following format: 
 
@@ -23,10 +23,12 @@ for example, if we wanted to run **htop** as a terminal app using dmenu, we woul
 
 `htop -name htop`
 
-### dmenu will look for the config file in the following order:
+### By default, dmenu will look for the config file in the following order:
 1. `$XDG_CONFIG_HOME/dmenu/terminal-apps.config`
 2. `~/.config/dmenu/terminal-apps.config`
 3. `~/.dmenu-terminal-apps.config`
+
+if this folder and/or file do not exist, create them.
 
 ---
 
