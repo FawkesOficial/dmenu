@@ -8,6 +8,8 @@ MANPREFIX = $(PREFIX)/share/man
 X11INC = /usr/X11R6/include
 X11LIB = /usr/X11R6/lib
 
+PYWALCOLORS = ${HOME}/.cache/wal
+
 # Xinerama, comment if you don't want it
 XINERAMALIBS  = -lXinerama
 XINERAMAFLAGS = -DXINERAMA
@@ -20,7 +22,7 @@ FREETYPEINC = /usr/include/freetype2
 #MANPREFIX = ${PREFIX}/man
 
 # includes and libs
-INCS = -I$(X11INC) -I$(FREETYPEINC)
+INCS = -I$(X11INC) -I$(FREETYPEINC) -I$(PYWALCOLORS) -Icolors
 LIBS = -L$(X11LIB) -lX11 $(XINERAMALIBS) $(FREETYPELIBS)
 
 # flags

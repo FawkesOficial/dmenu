@@ -5,6 +5,7 @@
 ## Added features
 
 + Adds the ability to launch specified commands such as **htop**, **ranger**, **cmus**, **cava**, etc. in your prefered terminal. See [Terminal Apps](#terminal-apps) section for more info.
++ Pywal generated colorschemes compatibility. See [Pywal Colorschemes](#pywal-colorschemes) section for more info.
 + Highlight search results.
 + Add a matching results number count.
 
@@ -26,6 +27,18 @@ for example, if we wanted to run **htop** as a terminal app using dmenu, we woul
 1. `$XDG_CONFIG_HOME/dmenu/terminal-apps.config`
 2. `~/.config/dmenu/terminal-apps.config`
 3. `~/.dmenu-terminal-apps.config`
+
+---
+
+## Pywal Colorschemes
+
+Because the "**highlight**" patch does not provide any color configuration flags like `-nb`, `-nf`, etc. and its colors can only be changed in `config.h`, you will have to copy the colorscheme template into pywal's template folder:
+
+`cp colors/colors-wal-fawkes-dmenu.h.template $HOME/.config/wal/templates/colors-wal-fawkes-dmenu.h`
+
+### If you do not wish to use pywal generated colorschemes,
+modify `colors/colors-wal-fawkes-dmenu.h` just like you would `config.h`.
+
 
 ---
 
