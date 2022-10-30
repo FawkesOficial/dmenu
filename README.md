@@ -30,6 +30,8 @@ for example, if we wanted to run **htop** as a terminal app using dmenu, we woul
 
 if this folder and/or file do not exist, create them.
 
+*(if you don't create them, dmenu will still run, don't worry.)*
+
 ---
 
 ## Pywal Colorschemes
@@ -37,6 +39,8 @@ if this folder and/or file do not exist, create them.
 Because the "**highlight**" patch does not provide any color configuration flags like `-nb`, `-nf`, etc. and its colors can only be changed in `config.h`, you will have to copy the colorscheme template into pywal's template folder:
 
 `cp colors/colors-wal-fawkes-dmenu.h.template $HOME/.config/wal/templates/colors-wal-fawkes-dmenu.h`
+
+### After running pywal, you have to re-compile dmenu to apply the new colorscheme !!!
 
 ### If you do not wish to use pywal generated colorschemes,
 modify `colors/colors-wal-fawkes-dmenu.h` just like you would `config.h`.
