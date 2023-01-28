@@ -40,9 +40,17 @@ Because the "**highlight**" patch does not provide any color configuration flags
 
 `cp colors/colors-wal-fawkes-dmenu.h.template $HOME/.config/wal/templates/colors-wal-fawkes-dmenu.h`
 
+### Make sure you compile/re-compile dmenu like this:
+```sh
+$ make clean
+$ make
+$ sudo make install
+```
+**you have to compile it as your user since during compilation it grabs `$HOME/.cache/wal/colors-wal-fawkes-dmenu.h`*
+
 ### After running pywal, you have to re-compile dmenu to apply the new colorscheme !!!
 
-### If you do not wish to use pywal generated colorschemes,
+## If you do not wish to use pywal generated colorschemes,
 modify `colors/colors-wal-fawkes-dmenu.h` just like you would `config.h`.
 
 
